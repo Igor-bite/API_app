@@ -37,7 +37,10 @@ extension ViewController: UISearchBarDelegate {
 
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [[String : AnyObject]]
                 if json.isEmpty {
-                    errorHasOccured = true
+                    DispatchQueue.main.async {
+                        self?.cityLabel.text = "Not found"
+                        self?.tempLabel.isHidden = true
+                    }
                 } else {
                     locationID = json[0]["woeid"] as! Int?
                     locationName = json[0]["title"] as! String?
@@ -61,7 +64,7 @@ extension ViewController: UISearchBarDelegate {
                             
                             DispatchQueue.main.async {
                                 if errorHasOccured{
-                                    self?.cityLabel.text = "Error"
+                                    self?.cityLabel.text = "Not found"
                                     self?.tempLabel.isHidden = true
                                 } else {
                                     self?.cityLabel.text = locationName!
