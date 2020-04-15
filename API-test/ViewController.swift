@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -21,29 +23,41 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let apiKey = "7e5c9bf9245f103431d12d0c6cf17fa0"
-        let urlString = "http://api.weatherstack.com/current?access_key=\(apiKey)&query=\(searchBar.text!)"
+        searchBar.resignFirstResponder()
+        
+        let urlString = "https://www.metaweather.com/api//location/search/?query=\(searchBar.text!.replacingOccurrences(of: " ", with: "%20"))"
         let url = URL(string: urlString)
         
-        var locationName: String?
-        var temperature: Double?
+         
+//        var locationName: String?
+        var locationID: Int?
+//        var temperature: Double?
+        var errorHasOccured: Bool = false
         
-        let task = URLSession.shared.dataTask(with: url!) {
-            (data, response, error) in
-            
+        let task = URLSession.shared.dataTask(with: url!) { [weak self] (data, response, error) in
             do {
-                let json = try  JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String : AnyObject]
                 
-                if let location = json["location"] {
-                    locationName = location["name"] as? String
-                }
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [[String : AnyObject]]
                 
-                if let current = json["current"] {
-                    temperature = current["temperature"] as? Double
+//                if let _ = json["error"] {
+//                    errorHasOccured = true
+//                }
+                
+                locationID = json[0]["woeid"] as! Int?
+                
+                DispatchQueue.main.async {
+                    if errorHasOccured{
+                        self?.cityLabel.text = "Error has occured"
+                        self?.tempLabel.isHidden = true
+                    } else {
+                        self?.cityLabel.text = "\(locationID!)"
+                        self?.tempLabel.text = "nope"//"\(temperature!)"
+                        self?.tempLabel.isHidden = false
+                    }
                 }
                 
             }
-            catch let jsonError{ 
+            catch let jsonError {
                 print(jsonError)
             }
         }
