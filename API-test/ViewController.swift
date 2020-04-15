@@ -25,42 +25,104 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         
-        let urlString = "https://www.metaweather.com/api//location/search/?query=\(searchBar.text!.replacingOccurrences(of: " ", with: "%20"))"
+        let urlString = "https://www.metaweather.com/api/location/search/?query=\(searchBar.text!.replacingOccurrences(of: " ", with: "%20"))"
         let url = URL(string: urlString)
         
          
-//        var locationName: String?
+        var locationName: String?
         var locationID: Int?
-//        var temperature: Double?
         var errorHasOccured: Bool = false
         
         let task = URLSession.shared.dataTask(with: url!) { [weak self] (data, response, error) in
             do {
-                
+
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [[String : AnyObject]]
-                
-//                if let _ = json["error"] {
-//                    errorHasOccured = true
-//                }
-                
-                locationID = json[0]["woeid"] as! Int?
-                
-                DispatchQueue.main.async {
-                    if errorHasOccured{
-                        self?.cityLabel.text = "Error has occured"
-                        self?.tempLabel.isHidden = true
-                    } else {
-                        self?.cityLabel.text = "\(locationID!)"
-                        self?.tempLabel.text = "nope"//"\(temperature!)"
-                        self?.tempLabel.isHidden = false
+                if json.isEmpty {
+                    errorHasOccured = true
+                } else {
+                    locationID = json[0]["woeid"] as! Int?
+                    locationName = json[0]["title"] as! String?
+                    
+                    let mainUrlString = "https://www.metaweather.com/api/location/\(locationID!)"
+                    let mainUrl = URL(string: mainUrlString)
+                    var temperature: Double?
+                    
+                    let mainTask = URLSession.shared.dataTask(with: mainUrl!) { [weak self] (data1, response1, error1) in
+                        do {
+                            
+                            let mainJson = try JSONSerialization.jsonObject(with: data1!, options: .mutableContainers)
+                                as! [String : AnyObject]
+                            
+                            if mainJson.isEmpty {
+                                errorHasOccured = true
+                            }
+                            
+                            let consolidated_weather = mainJson["consolidated_weather"] as! [[String : AnyObject]]?
+                            temperature = consolidated_weather?[0]["the_temp"] as! Double?
+                            
+                            DispatchQueue.main.async {
+                                if errorHasOccured{
+                                    self?.cityLabel.text = "Error"
+                                    self?.tempLabel.isHidden = true
+                                } else {
+                                    self?.cityLabel.text = locationName!
+                                    self?.tempLabel.text = "\(temperature!)"
+                                    self?.tempLabel.isHidden = false
+                                }
+                            }
+                            
+                        }
+                        catch let jsonError1 {
+                            print(jsonError1)
+                        }
                     }
+                    mainTask.resume()
                 }
-                
+
             }
             catch let jsonError {
                 print(jsonError)
             }
         }
+        
+//        let mainUrlString = "https://www.metaweather.com/api/location/\(locationID!)"
+//        let mainUrl = URL(string: mainUrlString)
+//        print(mainUrlString)
+//        var temperature: Double?
+//
+//        let mainTask = URLSession.shared.dataTask(with: mainUrl!) { [weak self] (data1, response1, error1) in
+//            do {
+////                print("hi")
+//
+//                let mainJson = try JSONSerialization.jsonObject(with: data1!, options: .mutableContainers)
+//                as! [String : AnyObject]
+//
+//                if mainJson.isEmpty {
+//                    errorHasOccured = true
+//                }
+//
+////                print("hi")
+//                let consolidated_weather = mainJson["consolidated_weather"] as! [[String : AnyObject]]?
+//                temperature = consolidated_weather?[0]["the_temp"] as! Double?
+//                print(temperature!)
+//
+//                DispatchQueue.main.async {
+//                    if errorHasOccured{
+//                        self?.cityLabel.text = "Error"
+//                        self?.tempLabel.isHidden = true
+//                    } else {
+//                        self?.cityLabel.text = "none"//locationName!
+//                        self?.tempLabel.text = "\(temperature!)"
+//                        self?.tempLabel.isHidden = false
+//                    }
+//                }
+//
+//            }
+//            catch let jsonError1 {
+//                print(jsonError1)
+//            }
+//        }
+//        mainTask.resume()
         task.resume()
     }
 }
