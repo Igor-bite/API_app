@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         searchBar.delegate = self
     }
 
-
 }
 
 extension ViewController: UISearchBarDelegate {
@@ -84,45 +83,6 @@ extension ViewController: UISearchBarDelegate {
                 print(jsonError)
             }
         }
-        
-//        let mainUrlString = "https://www.metaweather.com/api/location/\(locationID!)"
-//        let mainUrl = URL(string: mainUrlString)
-//        print(mainUrlString)
-//        var temperature: Double?
-//
-//        let mainTask = URLSession.shared.dataTask(with: mainUrl!) { [weak self] (data1, response1, error1) in
-//            do {
-////                print("hi")
-//
-//                let mainJson = try JSONSerialization.jsonObject(with: data1!, options: .mutableContainers)
-//                as! [String : AnyObject]
-//
-//                if mainJson.isEmpty {
-//                    errorHasOccured = true
-//                }
-//
-////                print("hi")
-//                let consolidated_weather = mainJson["consolidated_weather"] as! [[String : AnyObject]]?
-//                temperature = consolidated_weather?[0]["the_temp"] as! Double?
-//                print(temperature!)
-//
-//                DispatchQueue.main.async {
-//                    if errorHasOccured{
-//                        self?.cityLabel.text = "Error"
-//                        self?.tempLabel.isHidden = true
-//                    } else {
-//                        self?.cityLabel.text = "none"//locationName!
-//                        self?.tempLabel.text = "\(temperature!)"
-//                        self?.tempLabel.isHidden = false
-//                    }
-//                }
-//
-//            }
-//            catch let jsonError1 {
-//                print(jsonError1)
-//            }
-//        }
-//        mainTask.resume()
         task.resume()
     }
 }
