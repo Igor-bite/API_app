@@ -87,11 +87,12 @@ extension ViewController: UISearchBarDelegate {
                                     self?.tempLabel.isHidden = true
                                 } else {
                                     self?.cityLabel.text = locationName!
-                                    self?.tempLabel.text = "\(temperature!) C"
+                                    self?.tempLabel.text = "\(round(temperature!*10)/10) C"
                                     self?.humidityLabel.text = "\(humidity!)%"
-                                    self?.windSpeedLabel.text = "\(wind_speed!) m/s"
-                                    self?.visibilityLabel.text = "\(visibility!) m"
+                                    self?.windSpeedLabel.text = "\(round(wind_speed!*10)/10) m/s"
+                                    self?.visibilityLabel.text = "\(round(visibility!*10)/10) m"
                                     self?.tempLabel.isHidden = false
+                                    self?.searchBar.isTranslucent = true
                                 }
                             }
                             
