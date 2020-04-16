@@ -21,21 +21,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        
+        segmentTemp.addTarget(self, action: #selector(changeValue), for: .valueChanged)
+        
+    }
+    
+    @objc func changeValue(sender:AnyObject) {
+        parse_ID(ind: segmentTemp.selectedSegmentIndex)
     }
 
 }
 
-open class UIControlEventValueChanged {
-    func segmentChanged(_ segmentTemp: UISegmentedControl ) {
-        if (segmentTemp.selectedSegmentIndex == 1) {
-            
-        } else if (segmentTemp.selectedSegmentIndex == 2) {
-            
-        } else if (segmentTemp.selectedSegmentIndex == 3) {
-            
-        }
-    }
-}
+
 
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -43,10 +40,10 @@ extension ViewController: UISearchBarDelegate {
         
         segmentTemp.selectedSegmentIndex = 1
         
-        self.parse_ID();
+        self.parse_ID(ind: 1)
     }
     
-    func parse_ID() {
+    func parse_ID(ind: Int?) {
         let urlString = "https://www.metaweather.com/api/location/search/?query=\(searchBar.text!.replacingOccurrences(of: " ", with: "%20"))"
         let url = URL(string: urlString)
         
@@ -69,7 +66,14 @@ extension ViewController: UISearchBarDelegate {
                     let mainUrlString = "https://www.metaweather.com/api/location/\(locationID!)"
                     let mainUrl = URL(string: mainUrlString)
                     
-                    self?.parse_temp(locationName: locationName, mainUrl: mainUrl);
+                    if (ind == 0) {
+                        self?.parse_min_temp(locationName: locationName, mainUrl: mainUrl);
+                    } else if (ind == 1) {
+                        self?.parse_temp(locationName: locationName, mainUrl: mainUrl);
+                    } else if (ind == 2) {
+                        self?.parse_max_temp(locationName: locationName, mainUrl: mainUrl);
+                    }
+                    
                 }
             }
             catch let jsonError {
