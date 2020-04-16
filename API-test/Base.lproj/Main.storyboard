@@ -19,7 +19,7 @@
                                 <rect key="frame" x="-202" y="0.0" width="786" height="865"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="29g-cm-yCe">
+                            <searchBar alpha="0.59999999999999998" contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="29g-cm-yCe">
                                 <rect key="frame" x="0.0" y="86.666666666666671" width="414" height="56.000000000000014"/>
                                 <textInputTraits key="textInputTraits" textContentType="address-level2"/>
                             </searchBar>
@@ -106,6 +106,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="bh1-CI-TXr">
+                                <rect key="frame" x="156" y="228" width="226" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="Min"/>
+                                    <segment title="Average"/>
+                                    <segment title="Max"/>
+                                </segments>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -143,6 +155,7 @@
                         <outlet property="cityLabel" destination="eWM-Hw-RWq" id="exR-XJ-HUB"/>
                         <outlet property="humidityLabel" destination="ZXo-6r-H1H" id="N43-6w-THX"/>
                         <outlet property="searchBar" destination="29g-cm-yCe" id="6FG-Bv-d3Y"/>
+                        <outlet property="segmentTemp" destination="bh1-CI-TXr" id="xBb-os-h1h"/>
                         <outlet property="tempLabel" destination="8Y7-an-YPG" id="1GE-dU-bTT"/>
                         <outlet property="visibilityLabel" destination="XKl-QF-wkz" id="yqn-cn-kms"/>
                         <outlet property="windSpeedLabel" destination="kp3-bU-9dy" id="h8W-5v-a0i"/>
