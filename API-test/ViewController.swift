@@ -58,6 +58,9 @@ extension ViewController: UISearchBarDelegate {
                     DispatchQueue.main.async {
                         self?.cityLabel.text = "Not found"
                         self?.tempLabel.isHidden = true
+                        self?.humidityLabel.isHidden = true
+                        self?.windSpeedLabel.isHidden = true
+                        self?.visibilityLabel.isHidden = true
                     }
                 } else {
                     locationID = json[0]["woeid"] as! Int?
@@ -187,13 +190,20 @@ extension ViewController: UISearchBarDelegate {
             if errorHasOccured{
                 self.cityLabel.text = "Not found"
                 self.tempLabel.isHidden = true
+                self.humidityLabel.isHidden = true
+                self.windSpeedLabel.isHidden = true
+                self.visibilityLabel.isHidden = true
+
             } else {
                 self.cityLabel.text = locationName!
                 self.tempLabel.text = "\(round(temperature!*10)/10) C"
                 self.humidityLabel.text = "\(humidity!)%"
                 self.windSpeedLabel.text = "\(round(wind_speed!*10)/10) m/s"
-                self.visibilityLabel.text = "\(round(visibility!*10)/10) m"
+                self.visibilityLabel.text = "\(round(visibility!*10)/10) km"
                 self.tempLabel.isHidden = false
+                self.humidityLabel.isHidden = false
+                self.windSpeedLabel.isHidden = false
+                self.visibilityLabel.isHidden = false
             }
         }
     }
