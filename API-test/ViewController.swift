@@ -17,6 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var visibilityLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var segmentTemp: UISegmentedControl!
+    @IBOutlet weak var picture: UIImageView!
+    @IBAction func buttonclicked(_ sender: Any) {
+        performSegue(withIdentifier: "segue", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +33,21 @@ class ViewController: UIViewController {
     @objc func changeValue(sender:AnyObject) {
         parse_ID(ind: segmentTemp.selectedSegmentIndex)
     }
+    
+//    @IBAction func didTapButton() {
+//        present(SecondViewController(), animated: true)
+//    }
 
 }
+
+//class SecondViewController: UIViewController {
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        view.backgroundColor = .blue
+//    }
+//
+//}
 
 
 
@@ -84,6 +101,16 @@ extension ViewController: UISearchBarDelegate {
             }
         }
         task.resume()
+    }
+    
+    func get_picture() {
+        let urlString = "https://picsum.photos/1080/1920"
+        let url = URL(string: urlString)
+        
+        if let data = try? Data(contentsOf: url!)
+        {
+//             = UIImage(data: data)
+        }
     }
     
     func parse_temp(locationName: String?, mainUrl: URL?) {
