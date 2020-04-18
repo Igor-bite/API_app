@@ -103,16 +103,6 @@ extension ViewController: UISearchBarDelegate {
         task.resume()
     }
     
-    func get_picture() {
-        let urlString = "https://picsum.photos/1080/1920"
-        let url = URL(string: urlString)
-        
-        if let data = try? Data(contentsOf: url!)
-        {
-//             = UIImage(data: data)
-        }
-    }
-    
     func parse_temp(locationName: String?, mainUrl: URL?) {
         var temperature: Double?
         var humidity: Double?
