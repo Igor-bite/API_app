@@ -10,6 +10,14 @@ import UIKit
 
 let api_key = "e13117e6-789c-4689-882f-f480dbc1418e"
 
+struct advies {
+    let partly_cloudy: String = "cloud"
+    let overcast: String = "overcast"
+    let sunny: String = "sunny"
+    let light_rain_shower: String = "shower"
+}
+
+
 class SecondViewController: UIViewController {
 
     @IBOutlet weak var picture: UIImageView!
@@ -20,6 +28,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var humidity_label: UILabel!
     @IBOutlet weak var visibility_label: UILabel!
     @IBOutlet weak var weather: UIImageView!
+    @IBOutlet weak var adviceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +44,8 @@ class SecondViewController: UIViewController {
         
         get_background()
         request_for_spb()
+        
+        self.adviceLabel.text = ""
         
     }
     

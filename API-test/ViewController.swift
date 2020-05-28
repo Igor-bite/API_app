@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class ViewController: UIViewController {
 
@@ -21,13 +22,32 @@ class ViewController: UIViewController {
     @IBAction func buttonclicked(_ sender: Any) {
         performSegue(withIdentifier: "segue", sender: self)
     }
+
+    @IBOutlet weak var animationView: AnimationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
         
         segmentTemp.addTarget(self, action: #selector(changeValue), for: .valueChanged)
+        self.cityLabel.isHidden = true
+        self.tempLabel.isHidden = true
+        self.humidityLabel.isHidden = true
+        self.windSpeedLabel.isHidden = true
+        self.visibilityLabel.isHidden = true
+        animationView.contentMode = .scaleAspectFit
+        animationView.backgroundColor = .clear
         
+        // 2. Set animation loop mode
+        
+        animationView.loopMode = .loop
+        
+        // 3. Adjust animation speed
+        
+        animationView.animationSpeed = 1
+        
+        // 4. Play animation
+        animationView.play()
     }
     
     @objc func changeValue(sender:AnyObject) {
@@ -52,6 +72,10 @@ class ViewController: UIViewController {
 
 
 extension ViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        animationView.isHidden = false
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         
@@ -210,8 +234,9 @@ extension ViewController: UISearchBarDelegate {
                 self.humidityLabel.isHidden = true
                 self.windSpeedLabel.isHidden = true
                 self.visibilityLabel.isHidden = true
-
+                
             } else {
+                self.animationView.isHidden = true
                 self.cityLabel.text = locationName!
                 self.tempLabel.text = "\(round(temperature!*10)/10) C"
                 self.humidityLabel.text = "\(humidity!)%"
@@ -221,6 +246,7 @@ extension ViewController: UISearchBarDelegate {
                 self.humidityLabel.isHidden = false
                 self.windSpeedLabel.isHidden = false
                 self.visibilityLabel.isHidden = false
+                self.cityLabel.isHidden = false
             }
         }
     }
