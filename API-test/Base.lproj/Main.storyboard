@@ -122,9 +122,21 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pxr-WZ-sna">
-                                <rect key="frame" x="280" y="606" width="64" height="59"/>
-                                <state key="normal" backgroundImage="text.justify" catalog="system"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pxr-WZ-sna">
+                                <rect key="frame" x="247" y="606" width="97" height="59"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="6" maxX="12" maxY="6"/>
+                                <size key="titleShadowOffset" width="3" height="4"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Local">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="Futura-MediumItalic"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="buttonclicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gFX-3V-U2k"/>
                                     <segue destination="7xg-tp-n70" kind="popoverPresentation" identifier="segue" popoverAnchorView="Pxr-WZ-sna" id="CAV-3O-rIg">
@@ -140,13 +152,37 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="around-the-world"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pXl-6f-sqE" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="193" y="544" width="52" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="14327-wind-gust"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pX0-60-og3" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="199" y="598" width="40" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="4836-eye"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHb-cx-zyP" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="188" y="634" width="62" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="8713-water-loader"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8Y7-an-YPG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Ip-Dr-LY8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pxr-WZ-sna" secondAttribute="trailing" constant="50" id="1P5-2c-Mtg"/>
                             <constraint firstItem="29g-cm-yCe" firstAttribute="top" secondItem="ngd-4d-dMk" secondAttribute="bottom" constant="11" id="1b3-Gi-MG3"/>
                             <constraint firstItem="XKl-QF-wkz" firstAttribute="top" secondItem="kp3-bU-9dy" secondAttribute="bottom" constant="26" id="6WE-pg-l0h"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pxr-WZ-sna" secondAttribute="trailing" constant="70" id="A82-4g-S3m"/>
                             <constraint firstItem="29g-cm-yCe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BOl-NX-WAZ"/>
                             <constraint firstItem="k8X-bw-Q3T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CCU-FU-vg5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZXo-6r-H1H" secondAttribute="bottom" constant="60" id="Ckh-ZX-q2e"/>
@@ -178,12 +214,16 @@
                     <navigationItem key="navigationItem" id="n5L-b8-vyr"/>
                     <connections>
                         <outlet property="animationView" destination="EpW-g7-mL6" id="QeL-eP-mjv"/>
+                        <outlet property="button" destination="Pxr-WZ-sna" id="7hU-OK-iR3"/>
                         <outlet property="cityLabel" destination="eWM-Hw-RWq" id="exR-XJ-HUB"/>
+                        <outlet property="eyeAnimation" destination="pX0-60-og3" id="iHS-a6-MJq"/>
                         <outlet property="humidityLabel" destination="ZXo-6r-H1H" id="N43-6w-THX"/>
                         <outlet property="searchBar" destination="29g-cm-yCe" id="6FG-Bv-d3Y"/>
                         <outlet property="segmentTemp" destination="bh1-CI-TXr" id="xBb-os-h1h"/>
                         <outlet property="tempLabel" destination="8Y7-an-YPG" id="1GE-dU-bTT"/>
                         <outlet property="visibilityLabel" destination="XKl-QF-wkz" id="yqn-cn-kms"/>
+                        <outlet property="waterAnimation" destination="rHb-cx-zyP" id="NgR-dx-zZh"/>
+                        <outlet property="windAnimation" destination="pXl-6f-sqE" id="VOe-Pf-ZX7"/>
                         <outlet property="windSpeedLabel" destination="kp3-bU-9dy" id="h8W-5v-a0i"/>
                     </connections>
                 </viewController>
@@ -230,7 +270,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbm-BJ-M1d">
-                                <rect key="frame" x="25" y="88" width="208" height="66"/>
+                                <rect key="frame" x="25" y="89" width="208" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="208" id="Mkm-3f-7KT"/>
                                     <constraint firstAttribute="height" constant="66" id="T5g-wq-tIc"/>
@@ -248,7 +288,7 @@
                                 <size key="shadowOffset" width="3" height="-2"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="96L-K7-ApW">
-                                <rect key="frame" x="60" y="168.66666666666666" width="64" height="64"/>
+                                <rect key="frame" x="60" y="169.66666666666666" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="3oZ-hF-3W2"/>
                                     <constraint firstAttribute="width" constant="64" id="i76-vz-hs4"/>
@@ -306,13 +346,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9P-nf-Cc6">
-                                <rect key="frame" x="35" y="21" width="344" height="53"/>
+                                <rect key="frame" x="35" y="21" width="344" height="54"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Saint-Petersburg">
+                                    <fragment content="City">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <font key="NSFont" size="43" name="HelveticaNeue-MediumItalic"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -397,6 +437,7 @@
                     <navigationItem key="navigationItem" id="ZVS-xR-0cU"/>
                     <connections>
                         <outlet property="adviceLabel" destination="Rnt-xW-p9o" id="8ZJ-s8-f23"/>
+                        <outlet property="cityLabel" destination="T9P-nf-Cc6" id="rWb-eO-1nv"/>
                         <outlet property="describe" destination="gbm-BJ-M1d" id="LAk-Yp-CKr"/>
                         <outlet property="feels_like" destination="ljO-0V-XqY" id="WdI-Do-ooJ"/>
                         <outlet property="humidity_label" destination="K0X-hd-sOI" id="OcG-cT-TEW"/>
@@ -414,6 +455,5 @@
     </scenes>
     <resources>
         <image name="Weather picture" width="1080" height="1920"/>
-        <image name="text.justify" catalog="system" width="64" height="50"/>
     </resources>
 </document>

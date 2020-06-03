@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		A527A8D62449B52000D6EB26 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A527A8D52449B52000D6EB26 /* SecondViewController.swift */; };
+		A53675772485A0750067DCF4 /* 17126-island.json in Resources */ = {isa = PBXBuildFile; fileRef = A53675742485A0750067DCF4 /* 17126-island.json */; };
+		A53675782485A0750067DCF4 /* 8713-water-loader.json in Resources */ = {isa = PBXBuildFile; fileRef = A53675752485A0750067DCF4 /* 8713-water-loader.json */; };
+		A53675792485A0750067DCF4 /* 14327-wind-gust.json in Resources */ = {isa = PBXBuildFile; fileRef = A53675762485A0750067DCF4 /* 14327-wind-gust.json */; };
+		A536757B248706720067DCF4 /* 4836-eye.json in Resources */ = {isa = PBXBuildFile; fileRef = A536757A248706720067DCF4 /* 4836-eye.json */; };
+		A536757D248793520067DCF4 /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A536757C248793520067DCF4 /* Parsing.swift */; };
+		A536757F2487958C0067DCF4 /* 11865-sad-emoji.json in Resources */ = {isa = PBXBuildFile; fileRef = A536757E2487958C0067DCF4 /* 11865-sad-emoji.json */; };
+		A53675812487987A0067DCF4 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53675802487987A0067DCF4 /* SearchBar.swift */; };
+		A5367583248798FF0067DCF4 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5367582248798FF0067DCF4 /* Functions.swift */; };
 		A5555FA524466793004CEE10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5555FA424466793004CEE10 /* AppDelegate.swift */; };
 		A5555FA724466793004CEE10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5555FA624466793004CEE10 /* SceneDelegate.swift */; };
 		A5555FA924466793004CEE10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5555FA824466793004CEE10 /* ViewController.swift */; };
@@ -23,6 +31,14 @@
 		5397F09AED359D1A1597E29C /* Pods-API-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-API-test.debug.xcconfig"; path = "Target Support Files/Pods-API-test/Pods-API-test.debug.xcconfig"; sourceTree = "<group>"; };
 		90BE40FF36989A866C73FD14 /* libPods-API-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-API-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A527A8D52449B52000D6EB26 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		A53675742485A0750067DCF4 /* 17126-island.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "17126-island.json"; sourceTree = "<group>"; };
+		A53675752485A0750067DCF4 /* 8713-water-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8713-water-loader.json"; sourceTree = "<group>"; };
+		A53675762485A0750067DCF4 /* 14327-wind-gust.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "14327-wind-gust.json"; sourceTree = "<group>"; };
+		A536757A248706720067DCF4 /* 4836-eye.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4836-eye.json"; sourceTree = "<group>"; };
+		A536757C248793520067DCF4 /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
+		A536757E2487958C0067DCF4 /* 11865-sad-emoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "11865-sad-emoji.json"; sourceTree = "<group>"; };
+		A53675802487987A0067DCF4 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		A5367582248798FF0067DCF4 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		A5555FA124466793004CEE10 /* API-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5555FA424466793004CEE10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5555FA624466793004CEE10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +70,6 @@
 				5397F09AED359D1A1597E29C /* Pods-API-test.debug.xcconfig */,
 				C07824F44833688882447752 /* Pods-API-test.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -87,6 +102,11 @@
 		A5555FA324466793004CEE10 /* API-test */ = {
 			isa = PBXGroup;
 			children = (
+				A536757E2487958C0067DCF4 /* 11865-sad-emoji.json */,
+				A536757A248706720067DCF4 /* 4836-eye.json */,
+				A53675752485A0750067DCF4 /* 8713-water-loader.json */,
+				A53675762485A0750067DCF4 /* 14327-wind-gust.json */,
+				A53675742485A0750067DCF4 /* 17126-island.json */,
 				A5A7CA20247FB7D4009647BF /* around-the-world.json */,
 				A5A7CA1F247FB7D4009647BF /* loading.json */,
 				A5555FA424466793004CEE10 /* AppDelegate.swift */,
@@ -97,6 +117,9 @@
 				A5555FAF24466794004CEE10 /* LaunchScreen.storyboard */,
 				A5555FB224466794004CEE10 /* Info.plist */,
 				A527A8D52449B52000D6EB26 /* SecondViewController.swift */,
+				A536757C248793520067DCF4 /* Parsing.swift */,
+				A53675802487987A0067DCF4 /* SearchBar.swift */,
+				A5367582248798FF0067DCF4 /* Functions.swift */,
 			);
 			path = "API-test";
 			sourceTree = "<group>";
@@ -161,9 +184,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5555FB124466794004CEE10 /* LaunchScreen.storyboard in Resources */,
+				A53675782485A0750067DCF4 /* 8713-water-loader.json in Resources */,
 				A5555FAE24466794004CEE10 /* Assets.xcassets in Resources */,
 				A5A7CA21247FB7D4009647BF /* loading.json in Resources */,
+				A53675792485A0750067DCF4 /* 14327-wind-gust.json in Resources */,
+				A536757F2487958C0067DCF4 /* 11865-sad-emoji.json in Resources */,
+				A536757B248706720067DCF4 /* 4836-eye.json in Resources */,
 				A5555FAC24466793004CEE10 /* Main.storyboard in Resources */,
+				A53675772485A0750067DCF4 /* 17126-island.json in Resources */,
 				A5A7CA22247FB7D4009647BF /* around-the-world.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,9 +229,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A527A8D62449B52000D6EB26 /* SecondViewController.swift in Sources */,
+				A536757D248793520067DCF4 /* Parsing.swift in Sources */,
 				A5555FA924466793004CEE10 /* ViewController.swift in Sources */,
+				A5367583248798FF0067DCF4 /* Functions.swift in Sources */,
 				A5555FA524466793004CEE10 /* AppDelegate.swift in Sources */,
 				A5555FA724466793004CEE10 /* SceneDelegate.swift in Sources */,
+				A53675812487987A0067DCF4 /* SearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
