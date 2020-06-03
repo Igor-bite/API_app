@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import MapKit
+import Lottie
 
 let api_key = "e13117e6-789c-4689-882f-f480dbc1418e"
 
@@ -32,6 +33,13 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var weather: UIImageView!
     @IBOutlet weak var adviceLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var locationAnimation: AnimationView!
+    @IBOutlet weak var windAnimation: AnimationView!
+    @IBOutlet weak var eyeAnimation: AnimationView!
+    @IBOutlet weak var waterAnimation: AnimationView!
+    @IBOutlet weak var aboveseaLabel: UILabel!
+    @IBOutlet weak var heightAboveSea: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +58,14 @@ class SecondViewController: UIViewController {
         self.wind_label.isHidden = true
         self.visibility_label.isHidden = true
 //        DispatchQueue.global(qos: .background).async {
-        self.get_background()
+            self.get_background()
 //        }
         
         self.adviceLabel.text = ""
+        self.aboveseaLabel.textColor = .black
+        
+        self.setupAnimation()
+        
     }
     
     // MARK: - Navigation
@@ -64,7 +76,6 @@ class SecondViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     
-
 }
 // MARK: -Location
 

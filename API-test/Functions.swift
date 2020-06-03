@@ -118,6 +118,7 @@ extension SecondViewController: CLLocationManagerDelegate {
             NSLog("Точность: (\(horizontalAccuracy), \(verticalAccuracy))\n")
             let timestamp = location.timestamp
             NSLog("Временная метка \(timestamp)\n")
+            self.heightAboveSea.text = "\(altitude)"
             request_for_current(longtitude: location.coordinate.longitude, latitude: location.coordinate.latitude)
             
         }
@@ -133,5 +134,24 @@ extension SecondViewController: CLLocationManagerDelegate {
 
         //Если получилось, то можно получить локализованное описание ошибки
         NSLog(locationError.localizedDescription)
+    }
+    
+    func setupAnimation() -> Void {
+        locationAnimation.backgroundColor = .clear
+        locationAnimation.loopMode = .loop
+        locationAnimation.animationSpeed = 1
+        locationAnimation.play()
+        windAnimation.backgroundColor = .clear
+        windAnimation.loopMode = .loop
+        windAnimation.animationSpeed = 0.7
+        windAnimation.play()
+        waterAnimation.backgroundColor = .clear
+        waterAnimation.loopMode = .loop
+        waterAnimation.animationSpeed = 0.7
+        waterAnimation.play()
+        eyeAnimation.backgroundColor = .clear
+        eyeAnimation.loopMode = .loop
+        eyeAnimation.animationSpeed = 0.7
+        eyeAnimation.play()
     }
 }

@@ -16,6 +16,9 @@
 		A536757F2487958C0067DCF4 /* 11865-sad-emoji.json in Resources */ = {isa = PBXBuildFile; fileRef = A536757E2487958C0067DCF4 /* 11865-sad-emoji.json */; };
 		A53675812487987A0067DCF4 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53675802487987A0067DCF4 /* SearchBar.swift */; };
 		A5367583248798FF0067DCF4 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5367582248798FF0067DCF4 /* Functions.swift */; };
+		A53675862487A0B60067DCF4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53675852487A0B60067DCF4 /* AudioToolbox.framework */; };
+		A53675882487AE380067DCF4 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53675872487AE380067DCF4 /* Notifications.swift */; };
+		A536758A2487B6AA0067DCF4 /* 5733-location-map.json in Resources */ = {isa = PBXBuildFile; fileRef = A53675892487B6AA0067DCF4 /* 5733-location-map.json */; };
 		A5555FA524466793004CEE10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5555FA424466793004CEE10 /* AppDelegate.swift */; };
 		A5555FA724466793004CEE10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5555FA624466793004CEE10 /* SceneDelegate.swift */; };
 		A5555FA924466793004CEE10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5555FA824466793004CEE10 /* ViewController.swift */; };
@@ -39,6 +42,10 @@
 		A536757E2487958C0067DCF4 /* 11865-sad-emoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "11865-sad-emoji.json"; sourceTree = "<group>"; };
 		A53675802487987A0067DCF4 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		A5367582248798FF0067DCF4 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		A53675842487A0B50067DCF4 /* API-test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "API-test.entitlements"; sourceTree = "<group>"; };
+		A53675852487A0B60067DCF4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A53675872487AE380067DCF4 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		A53675892487B6AA0067DCF4 /* 5733-location-map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "5733-location-map.json"; sourceTree = "<group>"; };
 		A5555FA124466793004CEE10 /* API-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5555FA424466793004CEE10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5555FA624466793004CEE10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3D326C34BB86D0D66B644C6 /* libPods-API-test.a in Frameworks */,
+				A53675862487A0B60067DCF4 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +84,7 @@
 		8B0866D039CB7C667F071E4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A53675852487A0B60067DCF4 /* AudioToolbox.framework */,
 				90BE40FF36989A866C73FD14 /* libPods-API-test.a */,
 			);
 			name = Frameworks;
@@ -102,6 +111,8 @@
 		A5555FA324466793004CEE10 /* API-test */ = {
 			isa = PBXGroup;
 			children = (
+				A53675842487A0B50067DCF4 /* API-test.entitlements */,
+				A53675892487B6AA0067DCF4 /* 5733-location-map.json */,
 				A536757E2487958C0067DCF4 /* 11865-sad-emoji.json */,
 				A536757A248706720067DCF4 /* 4836-eye.json */,
 				A53675752485A0750067DCF4 /* 8713-water-loader.json */,
@@ -120,6 +131,7 @@
 				A536757C248793520067DCF4 /* Parsing.swift */,
 				A53675802487987A0067DCF4 /* SearchBar.swift */,
 				A5367582248798FF0067DCF4 /* Functions.swift */,
+				A53675872487AE380067DCF4 /* Notifications.swift */,
 			);
 			path = "API-test";
 			sourceTree = "<group>";
@@ -188,6 +200,7 @@
 				A5555FAE24466794004CEE10 /* Assets.xcassets in Resources */,
 				A5A7CA21247FB7D4009647BF /* loading.json in Resources */,
 				A53675792485A0750067DCF4 /* 14327-wind-gust.json in Resources */,
+				A536758A2487B6AA0067DCF4 /* 5733-location-map.json in Resources */,
 				A536757F2487958C0067DCF4 /* 11865-sad-emoji.json in Resources */,
 				A536757B248706720067DCF4 /* 4836-eye.json in Resources */,
 				A5555FAC24466793004CEE10 /* Main.storyboard in Resources */,
@@ -228,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53675882487AE380067DCF4 /* Notifications.swift in Sources */,
 				A527A8D62449B52000D6EB26 /* SecondViewController.swift in Sources */,
 				A536757D248793520067DCF4 /* Parsing.swift in Sources */,
 				A5555FA924466793004CEE10 /* ViewController.swift in Sources */,
@@ -379,6 +393,7 @@
 			baseConfigurationReference = 5397F09AED359D1A1597E29C /* Pods-API-test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "API-test/API-test.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4D7YJ8BY8H;
 				INFOPLIST_FILE = "API-test/Info.plist";
@@ -398,6 +413,7 @@
 			baseConfigurationReference = C07824F44833688882447752 /* Pods-API-test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "API-test/API-test.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4D7YJ8BY8H;
 				INFOPLIST_FILE = "API-test/Info.plist";

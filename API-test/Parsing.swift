@@ -162,7 +162,7 @@ extension SecondViewController {
     }
     
     func get_background() {
-        let urlString = "https://picsum.photos/1200/2000?blur=5"
+        let urlString = "https://picsum.photos/1200/2000?blur=10"
         let url = URL(string: urlString)
         
         if let data = try? Data(contentsOf: url!)
@@ -223,6 +223,23 @@ extension SecondViewController {
                     self.humidity_label.isHidden = false
                     self.wind_label.isHidden = false
                     self.visibility_label.isHidden = false
+//                    self.locationAnimation.isHidden = false
+                    
+                    switch description {
+                    case "Sunny":
+                        self.adviceLabel.text = "Oh, great weather! It's time go for a walk"
+                    case "Rainy":
+                        self.adviceLabel.text = "It seems, it will be raining today. Don't forget an umbrella"
+                    case "Cloudy":
+                        self.adviceLabel.text = "Unfortunately, you won't be able to see space today"
+                    case "Partly cloudy":
+                        self.adviceLabel.text = "Today is a good day with a good weather"
+                    case "Clear":
+                        self.adviceLabel.text = "Stars. Let's go and explore them"
+                    
+                    default:
+                        self.adviceLabel.text = "Unrecognized"
+                    }
                 }
             }
             catch let jsonError {
